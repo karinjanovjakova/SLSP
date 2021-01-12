@@ -18,13 +18,9 @@ Test
     input text  id:head_txtMacigNo  ${cislo}
     click button    id:head_btnNext
     click button    id:Button1
-    ${type s}    Evaluate     type($ot)
-    Log To Console     ${type s}
     FOR   ${i}    IN RANGE    1   21
        BuiltIn.Set Global Variable  ${i}
        ${item}  get text    head_lblstatus${i}
-       ${type s}    Evaluate     type($item)
-       Log To Console     ${type s}
        Run Keyword if   "${item}"=="${ot}"  Test Keyword 1
        ...  ELSE    Test Keyword 2
     END
